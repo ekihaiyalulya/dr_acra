@@ -1,3 +1,4 @@
+requests
 numpy==1.20.1
 pandas==1.2.4
 pip==1.0.1
@@ -5,7 +6,7 @@ flask
 pyngrok
 gevent
 keras
-https://raw.githubusercontent.com/gstaff/flask-ngrok/master/flask_ngrok.py
+flask-ngrok
 tensorflow
 pillow
 streamlit
