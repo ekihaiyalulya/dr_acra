@@ -1,5 +1,5 @@
 import subprocess
-!mkdir -p ~/.ngrok2 && cp /tmp/ngrok/ngrok ~/.ngrok2/ && chmod +x ~/.ngrok2/ngrok
+subprocess.run(['!mkdir -p ~/.ngrok2 && cp /tmp/ngrok/ngrok ~/.ngrok2/ && chmod +x ~/.ngrok2/ngrok'])
 
 from __future__ import division, print_function
 
