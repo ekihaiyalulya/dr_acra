@@ -10,4 +10,3 @@ flask-ngrok
 tensorflow
 pillow
 streamlit
-subprocess
