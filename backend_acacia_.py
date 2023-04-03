@@ -29,11 +29,7 @@ import subprocess
 import os
 
 from pyngrok import ngrok
-ngrok.set_auth_token("2LonMZbaS41s6CASLcEM7yJ8kdQ_VJBpynu3ShKjaVsHuQBK")
 
-app = Flask(__name__)
-
-# !ngrok authtoken 2LonMZbaS41s6CASLcEM7yJ8kdQ_VJBpynu3ShKjaVsHuQBK
 
 # Set the ngrok directory to the user's home directory
 os.environ['NGROK_CONFIG_DIR'] = os.path.expanduser('~/.ngrok2')
@@ -49,6 +45,13 @@ while True:
 
 # Show the public URL in Streamlit
 st.write("Public URL:", ngrok_url)
+
+
+ngrok.set_auth_token("2LonMZbaS41s6CASLcEM7yJ8kdQ_VJBpynu3ShKjaVsHuQBK")
+
+app = Flask(__name__)
+
+# !ngrok authtoken 2LonMZbaS41s6CASLcEM7yJ8kdQ_VJBpynu3ShKjaVsHuQBK
 
 model = tf.keras.models.load_model('model_acacia_4.h5')
 run_with_ngrok(app)
