@@ -1,5 +1,5 @@
 import subprocess
-subprocess.run(['!mkdir -p ~/.ngrok2 && cp /tmp/ngrok/ngrok ~/.ngrok2/ && chmod +x ~/.ngrok2/ngrok'])
+
 
 from __future__ import division, print_function
 
@@ -28,6 +28,8 @@ from flask_ngrok import run_with_ngrok
 from werkzeug.utils import secure_filename
 
 from pyngrok import ngrok
+
+subprocess.run(['!mkdir -p ~/.ngrok2 && cp /tmp/ngrok/ngrok ~/.ngrok2/ && chmod +x ~/.ngrok2/ngrok'])
 
 ngrok.set_auth_token("2LonMZbaS41s6CASLcEM7yJ8kdQ_VJBpynu3ShKjaVsHuQBK")
 
