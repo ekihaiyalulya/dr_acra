@@ -24,10 +24,12 @@ from tensorflow.keras.preprocessing.image import img_to_array, load_img
 from flask_ngrok import run_with_ngrok
 from werkzeug.utils import secure_filename
 
-skrip='!mkdir -p ~/.ngrok2 && cp /tmp/ngrok/ngrok ~/.ngrok2/ && chmod +x ~/.ngrok2/ngrok'
-os.system(skrip)
+
 
 from pyngrok import ngrok
+
+skrip='!mkdir -p ~/.ngrok2 && cp /tmp/ngrok/ngrok ~/.ngrok2/ && chmod +x ~/.ngrok2/ngrok'
+os.system(skrip)
 
 ngrok.set_auth_token("2LonMZbaS41s6CASLcEM7yJ8kdQ_VJBpynu3ShKjaVsHuQBK")
 
