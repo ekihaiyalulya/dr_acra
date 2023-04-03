@@ -1,3 +1,5 @@
+!mkdir -p ~/.ngrok2 && cp /tmp/ngrok/ngrok ~/.ngrok2/ && chmod +x ~/.ngrok2/ngrok
+
 from __future__ import division, print_function
 
 import sys, os, glob, re
@@ -24,28 +26,7 @@ from tensorflow.keras.preprocessing.image import img_to_array, load_img
 from flask_ngrok import run_with_ngrok
 from werkzeug.utils import secure_filename
 
-import streamlit as st
-import subprocess
-import os
-
 from pyngrok import ngrok
-
-
-# Set the ngrok directory to the user's home directory
-os.environ['NGROK_CONFIG_DIR'] = os.path.expanduser('~/.ngrok2')
-
-# Start ngrok and get the public URL
-ngrok = subprocess.Popen(['ngrok', 'http', '8501', '--log=stdout', '--config', os.path.join(os.environ['NGROK_CONFIG_DIR'], 'ngrok.yml')])
-ngrok_url = None
-while True:
-    line = ngrok.stdout.readline().decode()
-    if "started tunnel" in line:
-        ngrok_url = line.split()[1]
-        break
-
-# Show the public URL in Streamlit
-st.write("Public URL:", ngrok_url)
-
 
 ngrok.set_auth_token("2LonMZbaS41s6CASLcEM7yJ8kdQ_VJBpynu3ShKjaVsHuQBK")
 
