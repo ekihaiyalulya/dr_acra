@@ -100,4 +100,4 @@ def upload():
         return '<h1>Method Salah</h1>'
 
 
-app.run(port=8080)
+app.run()
